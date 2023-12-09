@@ -1,9 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 
 
-function Chat({ userName, onSend }) {
-    const [username, setUsername] = useState(userName)
-    const [msg, setMsg] = useState('')
+function Chat(
+    { userName, onSend }: 
+    { userName: string, onSend: (e: string) => void }
+    ) {
+    const [username, setUsername] = useState<string>(userName)
+    const [msg, setMsg] = useState<string>('')
     return (
     <>
         <div className="container">
@@ -13,7 +16,7 @@ function Chat({ userName, onSend }) {
                 Hello world!
             </h3>
             </div>
-            <hr width="85%" color="#646cff" className="sep"/>
+            {/* <hr width="85%" color="#646cff" className="sep"/> */}
             <div className="card">
             <label>
                 <input value={msg} onChange={(e) => {

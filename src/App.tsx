@@ -1,6 +1,4 @@
-import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import { useState } from 'react'
 import './App.css'
 import Chat from './components/chat.tsx';
 import Login from './components/login.tsx';
@@ -11,8 +9,8 @@ function login() {
 
 function App() {
 
-  const [msgs, setMsgs] = useState([])
-  const [username, setUsername] = useState(login())
+  const [msgs, setMsgs] = useState<string[]>([])
+  const [username, setUsername] = useState<string>(login())
   
   return (
     <>

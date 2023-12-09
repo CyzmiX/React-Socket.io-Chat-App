@@ -3,8 +3,11 @@ import { useState } from 'react'
 
 
 
-function Login({ onLogin }) {
-    const [username, setUsername] = useState('')
+function Login(
+    { onLogin } :
+    { onLogin: (e: string) => void}
+     ) {
+    const [username, setUsername] = useState<string>('')
 
     function login() {
         localStorage['react-chat-login'] = username
@@ -14,7 +17,7 @@ function Login({ onLogin }) {
     <>
         <div className="login">
             <h1>Welcome To The Chat!</h1>
-            <hr width="80%" />
+            {/* <hr width="80%" /> */}
             <label>
                 Username:
             </label>
